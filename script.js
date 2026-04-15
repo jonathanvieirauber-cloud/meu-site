@@ -1,22 +1,22 @@
 const produtos = [
-  "Meia de Poliamida",
-  "Pochete",
-  "Garrafa Dobrável",
-  "Squeeze de Corrida",
-  "Eletrólito",
-  "Camisa Além do Pace",
-  "Lanterna Portátil",
-  "Óculos Baixa Pace"
+  { nome: "Meia de Poliamida", imagem: "meia-de-poliamida.png" },
+  { nome: "Pochete", imagem: "pochete.png" },
+  { nome: "Garrafa Dobrável", imagem: "garrafa-dobravel.png" },
+  { nome: "Squeeze de Corrida", imagem: "squeeze-de-corrida.png" },
+  { nome: "Eletrólito", imagem: "eletrolito.png" },
+  { nome: "Camisa Além do Pace", imagem: "camisa-alem-do-pace.png" },
+  { nome: "Lanterna Portátil", imagem: "lanterna-portatil.png" },
+  { nome: "Óculos Baixa Pace", imagem: "oculos-baixa-pace.png" }
 ];
 
 const container = document.getElementById("produtos");
 
-produtos.forEach(nome => {
+produtos.forEach(produto => {
   container.innerHTML += `
     <div class="card">
-      <img src="${nome.toLowerCase().replace(/ /g,'-')}.png">
-      <h3>${nome}</h3>
-      <button onclick="comprar('${nome}')">Comprar</button>
+      <img src="${produto.imagem}?v=3">
+      <h3>${produto.nome}</h3>
+      <button onclick="comprar('${produto.nome}')">Comprar</button>
     </div>
   `;
 });

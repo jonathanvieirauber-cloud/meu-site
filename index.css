@@ -31,13 +31,13 @@ nav a:hover{color:#f88901}
 .hero p{opacity:.8;margin-bottom:20px}
 .hero button{
   padding:12px 25px;background:#f88901;border:none;border-radius:30px;
-  cursor:pointer;font-size:16px;font-weight:bold;transition:.3s
+  cursor:pointer;font-size:16px;font-weight:bold;transition:.3s;color: #000 !important;
 }
+
 .hero button:hover{transform:scale(1.1)}
 
 .produtos {
   padding: 20px 20px 40px;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
@@ -63,8 +63,9 @@ nav a:hover{color:#f88901}
 
 .card button{
   padding:10px 15px;background:#f88901;border:none;border-radius:8px;
-  cursor:pointer;font-weight:bold
+  cursor:pointer;font-weight:bold;color: #000 !important;
 }
+
 
 .whatsapp{
   position:fixed;bottom:20px;right:20px;
@@ -147,3 +148,8 @@ html {
     display: flex;
   }
 }
+
+button {
+  color: #000 !important;
+}
+
