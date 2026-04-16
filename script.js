@@ -1,3 +1,5 @@
+console.log("TESTE GIT");
+
 const produtos = [
   { nome: "Meia de Poliamida", imagem: "meia-de-poliamida.png" },
   { nome: "Pochete", imagem: "pochete.png" },
@@ -66,3 +68,4 @@ linksMenu.forEach(link => {
     document.getElementById("menu").classList.remove("ativo");
   });
 });
+console.log("mudança teste github");
