@@ -1,5 +1,11 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#f88901;color:#ffffff}
+
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+}
 
 .header{
   display:flex;justify-content:space-between;align-items:center;
@@ -36,11 +42,18 @@ nav a:hover{color:#f88901}
 
 .hero button:hover{transform:scale(1.1)}
 
+.secao-produtos {
+  background: #f88901;
+  padding: 40px 20px;
+}
+
 .produtos {
   padding: 20px 20px 40px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
+
+  background: #f88901; /* 🔥 aqui fica o laranja */
 }
 
 .card{
@@ -62,20 +75,43 @@ nav a:hover{color:#f88901}
 .card h3{margin-bottom:10px}
 
 .card button{
-  padding:10px 15px;background:#f88901;border:none;border-radius:8px;
-  cursor:pointer;font-weight:bold;color: #000 !important;
+  padding:14px 22px;
+  background:#f88901;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  font-size:16px;
+  color:#000 !important;
+  margin: 0 auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+.card button:hover{
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+.icon-carrinho{
+  width:18px;
+  height:18px;
 }
 
 
 .whatsapp{
-  position:fixed;bottom:20px;right:20px;
-  padding:15px;border-radius:50%;cursor:pointer;
-  font-size:20px;box-shadow:0 5px 20px rgba(0,0,0,.3)
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
 }
 
 .whatsapp img {
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
 }
 
 footer{text-align:center;padding:20px;background:#000000}
@@ -88,9 +124,8 @@ footer{text-align:center;padding:20px;background:#000000}
 .titulo-produtos {
   text-align: center;
   margin-bottom: 20px;
-  padding-top: 20px;
   font-size: 35px;
-  color:rgb(0, 0, 0)
+  color: #000;
 }
 
 html {

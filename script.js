@@ -16,8 +16,11 @@ produtos.forEach(produto => {
     <div class="card">
       <img src="${produto.imagem}?v=3">
       <h3>${produto.nome}</h3>
-      <button onclick="comprar('${produto.nome}')">Comprar</button>
-    </div>
+      <button onclick="comprar('${produto.nome}')">
+      <img src="carrinho.png" class="icon-carrinho">
+      Comprar
+    </button>
+  </div>
   `;
 });
 
@@ -55,3 +58,11 @@ function toggleMenu() {
   const menu = document.getElementById("menu");
   menu.classList.toggle("ativo");
 }
+
+const linksMenu = document.querySelectorAll("#menu a");
+
+linksMenu.forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("menu").classList.remove("ativo");
+  });
+});
