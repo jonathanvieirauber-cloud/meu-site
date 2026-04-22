@@ -104,7 +104,7 @@ nav a:hover{color:#f88901}
 
 .whatsapp{
   position: fixed;
-  bottom: 10vh;
+  bottom: 50px;
   right: 20px;
   cursor: pointer;
 }
