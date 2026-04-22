@@ -39,8 +39,11 @@ function abrirWhatsApp(){
 
 function scrollProdutos() {
   const titulo = document.getElementById("titulo-produtos");
+  const header = document.querySelector(".header");
 
-  const y = titulo.getBoundingClientRect().top + window.pageYOffset - 80;
+  const headerHeight = header.offsetHeight;
+
+  const y = titulo.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
   window.scrollTo({
     top: y,
@@ -69,3 +72,7 @@ linksMenu.forEach(link => {
   });
 });
 console.log("mudança teste github");
+document.querySelector('a[href="#titulo-produtos"]').addEventListener("click", function(e) {
+  e.preventDefault();
+  scrollProdutos();
+});
