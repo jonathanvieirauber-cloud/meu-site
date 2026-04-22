@@ -189,3 +189,51 @@ button {
   color: #000 !important;
 }
 
+.icon-instagram {
+  width: 35px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.icon-instagram:hover {
+  transform: scale(1.1);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000000;
+}
+
+footer a {
+  display: inline-block;
+}
+
+.btn-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* espaço entre ícone e texto */
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn-instagram {
+  background: #111;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.btn-instagram:hover {
+  transform: scale(1.05);
+  color: #f88901; /* cor do seu site */
+}
+
+.btn-instagram img {
+  width: 20px;
+  height: 20px;
+}
