@@ -237,3 +237,24 @@ footer a {
   width: 20px;
   height: 20px;
 }
+
+.credito-dev {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #FFFFFF; /* texto "Desenvolvido por" sempre branco */
+}
+
+/* VisionarePages padrão */
+.credito-dev strong {
+  font-weight: 600;
+  color: #38BDF8;
+  transition: color 0.3s ease;
+}
+
+/* Hover apenas no nome */
+.credito-dev:hover strong {
+  color: #2563EB;
+}
+
