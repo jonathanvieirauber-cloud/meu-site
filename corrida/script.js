@@ -37,12 +37,25 @@ foto.onload = function(){
 canvas.width = 1080;
 canvas.height = 1080;
 
+const canvasSize = 1080;
+
+const escala = Math.max(
+  canvasSize / foto.width,
+  canvasSize / foto.height
+);
+
+const novaLargura = foto.width * escala;
+const novaAltura = foto.height * escala;
+
+const x = (canvasSize - novaLargura) / 2;
+const y = (canvasSize - novaAltura) / 2;
+
 ctx.drawImage(
-foto,
-0,
-0,
-1080,
-1080
+  foto,
+  x,
+  y,
+  novaLargura,
+  novaAltura
 );
 
 btnBaixar.style.display = "inline-block";
@@ -66,22 +79,29 @@ leitor.readAsDataURL(arquivo);
 }); 
 
 document
-.getElementById("baixar")
-.addEventListener("click", () => {
+  .getElementById("baixar")
+  .addEventListener("click", () => {
 
-    const link = document.createElement("a");
+    const imagem = canvas.toDataURL("image/png");
 
-    link.download = "eu-vou-corrida.png";
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(
+      navigator.userAgent
+    );
 
-    link.href = canvas.toDataURL("image/png");
-
-    link.click();
+    if (isMobile) {
+      window.open(imagem, "_blank");
+    } else {
+      const link = document.createElement("a");
+      link.download = "eu-vou-corrida.png";
+      link.href = imagem;
+      link.click();
+    }
 
     setTimeout(() => {
-        popup.style.display = "flex";
+      popup.style.display = "flex";
     }, 500);
 
-});
+  });
 
 fecharPopup.addEventListener("click", () => {
     popup.style.display = "none";
