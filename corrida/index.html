@@ -1,0 +1,60 @@
+<!-- corrida/index.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eu Vou - Corrida</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Eu Vou!</h1>
+
+<p>Envie sua foto e gere sua imagem para compartilhar.</p>
+
+<label for="upload" class="upload-btn">
+    Selecionar Foto
+</label>
+
+<input type="file" id="upload" accept="image/*" hidden>
+
+<p id="nome-arquivo"></p>
+
+<canvas id="canvas"></canvas>
+
+<button id="baixar">
+Baixar Imagem
+</button>
+
+</div>
+
+<script src="script.js"></script>
+
+<div id="popup-instagram" class="popup">
+
+    <div class="popup-content">
+
+        <h2>Imagem Baixada! 🎉</h2>
+
+        <p>
+            Não se esqueça de marcar o Instagram da Corrida Ponte a Ponte.
+        </p>
+
+        <strong>@corridaponteaponte</strong>
+
+        <button id="fechar-popup">
+            Fechar
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
