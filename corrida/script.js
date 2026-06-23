@@ -82,23 +82,14 @@ document.getElementById("baixar").addEventListener("click", () => {
 
     const imagem = canvas.toDataURL("image/png");
 
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const link = document.createElement("a");
+    link.href = imagem;
+    link.download = "eu-vou-corrida.png";
 
-    if (isMobile) {
-        const novaJanela = window.open();
-        novaJanela.document.write(`
-            <title>Salvar imagem</title>
-            <img src="${imagem}" style="width:100%" />
-            <p style="text-align:center;font-family:sans-serif;">
-                Pressione e segure a imagem para salvar
-            </p>
-        `);
-    } else {
-        const link = document.createElement("a");
-        link.href = imagem;
-        link.download = "eu-vou-corrida.png";
-        link.click();
-    }
+    // tenta forçar clique direto
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 
     setTimeout(() => {
         popup.style.display = "flex";
