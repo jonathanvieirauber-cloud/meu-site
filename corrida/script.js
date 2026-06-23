@@ -78,30 +78,33 @@ leitor.readAsDataURL(arquivo);
 
 }); 
 
-document
-  .getElementById("baixar")
-  .addEventListener("click", () => {
+document.getElementById("baixar").addEventListener("click", () => {
 
     const imagem = canvas.toDataURL("image/png");
 
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(
-      navigator.userAgent
-    );
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     if (isMobile) {
-      window.open(imagem, "_blank");
+        const novaJanela = window.open();
+        novaJanela.document.write(`
+            <title>Salvar imagem</title>
+            <img src="${imagem}" style="width:100%" />
+            <p style="text-align:center;font-family:sans-serif;">
+                Pressione e segure a imagem para salvar
+            </p>
+        `);
     } else {
-      const link = document.createElement("a");
-      link.download = "eu-vou-corrida.png";
-      link.href = imagem;
-      link.click();
+        const link = document.createElement("a");
+        link.href = imagem;
+        link.download = "eu-vou-corrida.png";
+        link.click();
     }
 
     setTimeout(() => {
-      popup.style.display = "flex";
+        popup.style.display = "flex";
     }, 500);
 
-  });
+});
 
 fecharPopup.addEventListener("click", () => {
     popup.style.display = "none";
